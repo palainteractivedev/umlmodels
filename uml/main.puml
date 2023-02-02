@@ -5,7 +5,7 @@ if (Has selected Jurisdiction?) then (yes)
   label lbl_login
   repeat
     if (Has sessionToken?) then (no)
-      :LoginUIComponent;
+       :LoginUIComponent;
     endif
   repeat while( Has sessionToken) is (no)
   :MainLobbyUIComponent;
