@@ -50,3 +50,4 @@ jobs:
           commit_author: "Dan Shields <d4nshields@gmail.com>"
           commit_message: "Generate SVG and PNG images for PlantUML diagrams" 
           branch: ${{ github.head_ref }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
