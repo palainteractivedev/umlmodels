@@ -6,7 +6,7 @@ if (Has selected Jurisdiction?) then (yes)
   repeat
     if (Has sessionToken?) then (no)
       :LoginUIComponent;
-     endif
+    endif
   repeat while( Has sessionToken) is (no)
   :MainLobbyUIComponent;
   stop
