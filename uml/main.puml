@@ -1,7 +1,7 @@
 startuml
 
 start
-if (Has selected Jurisdiction?) then (Yes)
+if (Has selected Jurisdiction?) then (yes)
   label lbl_login
   repeat
     if (Has sessionToken?) then (no)
