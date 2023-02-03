@@ -14,6 +14,8 @@ else (no)
   :StateChooserUIComponent;
   goto lbl_login
 endif
-
+note left
+  * foo
+end note
 
 @enduml
