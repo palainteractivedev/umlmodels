@@ -1,3 +1,3 @@
 # file: uml/login.puml
 
-![login workflow](uml/login.svg)
+![login workflow](uml/login.svg?)
