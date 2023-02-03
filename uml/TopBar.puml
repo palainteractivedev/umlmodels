@@ -1,0 +1,18 @@
+@startuml
+class TopBarLobby {
+  HamburgerMenu hamburgerMenu
+  GeocomplyTestButtton geocomplyTest
+}
+class HamburgerMenu {
+  MenuItem menuItems[]
+}
+class MenuItem {
+  String name
+  String navigationLink
+  String theme
+}
+
+class GeocomplyTestButton {
+}
+
+@enduml
