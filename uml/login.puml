@@ -17,7 +17,7 @@ endif
 note left
   * one
   * two
-  * three
+  * three...
 end note
 
 @enduml
