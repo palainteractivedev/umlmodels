@@ -34,20 +34,14 @@ jobs:
       - name: UML files considered echo output
         run: |
           echo ${{ steps.getfile.outputs.files }}
-      - name: Generate SVG Diagrams
-        uses: cloudbees/plantuml-github-action@master
+      - run: wget --no-verbose https://downloads.sourceforge.net/project/plantuml/plantuml.jar
+      - run: java -jar plantuml.jar -v -tsvg ${{ steps.getfile.outputs.files }}
+      - uses: EndBug/add-and-commit@v7
         with:
-            args: -v -tsvg ${{ steps.getfile.outputs.files }}
-      - name: Generate PNG Diagrams
-        uses: cloudbees/plantuml-github-action@master
+          message: 'generate SVG for PlantUML'
+          add: '*.svg'
+          push: false
+      - uses: ad-m/github-push-action@master
         with:
-            args: -v -tpng ${{ steps.getfile.outputs.files }}
-      - name: Push Local Changes
-        uses:  stefanzweifel/git-auto-commit-action@v4.1.2 
-        with: 
-          commit_user_name: "d4nshields"
-          commit_user_email: "d4nshields@gmail.com"
-          commit_author: "Dan Shields <d4nshields@gmail.com>"
-          commit_message: "Generate SVG and PNG images for PlantUML diagrams" 
-          branch: ${{ github.head_ref }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: ${{ github.ref }}
