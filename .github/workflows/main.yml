@@ -18,7 +18,7 @@ jobs:
       - name: Get changed UML files
         id: getfile
         run: |
-          files=$(git diff-tree -r --no-commit-id --name-only ${{ github.sha }} | grep '.puml' | xargs)
+          files=$(git diff-tree -r --no-commit-id --name-only ${{ github.sha }} | grep '.puml')
       - name: UML files considered echo output
         run: |
           echo ${{ steps.getfile.outputs.files }}
