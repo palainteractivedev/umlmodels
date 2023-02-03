@@ -17,7 +17,7 @@ endif
 note left
   * Bullet list
   * Second item
-  ** hello
+  ** hello...
 end note
 
 @enduml
