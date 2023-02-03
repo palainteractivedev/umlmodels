@@ -1,3 +1,3 @@
-# file: uml/other.puml
+# file: uml/login.puml
 
-![login workflow](uml/login2.svg)
+![login workflow](uml/login.svg)
