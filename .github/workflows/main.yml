@@ -18,12 +18,12 @@ jobs:
       - name: Get changed UML files
         id: getfile
         run: |
-          files=$(git diff-tree -r --no-commit-id --name-only ${{ github.sha }} | grep '.puml')
+          echo $(git diff-tree -r --no-commit-id --name-only ${{ github.sha }} | grep '.puml') >> $GITHUB_OUTPUT
       - name: UML files considered echo output
         run: |
-          echo ${{ steps.getfile.outputs.files }}
+          echo ${{ steps.getfile.outputs.* }}
       - run: wget --no-verbose https://downloads.sourceforge.net/project/plantuml/plantuml.jar
-      - run: java -jar plantuml.jar -v -tsvg ${{ steps.getfile.outputs.files }}
+      - run: java -jar plantuml.jar -v -tsvg ${{ steps.getfile.outputs.* }}
       - uses: EndBug/add-and-commit@v7
         with:
           message: 'generate SVG for PlantUML'
