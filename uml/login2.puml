@@ -14,10 +14,5 @@ else (no)
   :StateChooserUIComponent;
   goto lbl_login
 endif
-note left
-  * Bullet list
-  * Second item
-  ** hello.....
-end note
 
 @enduml
